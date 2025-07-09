@@ -1,21 +1,19 @@
 import { DropZone, Card, InlineStack, Thumbnail, BlockStack, Text } from '@shopify/polaris';
 import { NoteIcon } from '@shopify/polaris-icons';
 import { useState, useCallback } from 'react';
-
 export default function FileUpload({ onFileChange }) {
   const [file, setFile] = useState(null);
   const [selectfile_outline, setselectfile_outline] = useState(true);
-
   const handleDropZoneDrop = useCallback(
     (_, acceptedFiles) => {
       const selectedFile = acceptedFiles[0];
 
-      if (selectedFile && selectedFile.type === 'application/pdf') {
+  if (selectedFile && selectedFile.type === 'application/pdf') {
         setFile(selectedFile);
         setselectfile_outline(false);
         onFileChange(selectedFile);
       } else {
-        // Reset if non-PDF
+       
         setFile(null);
         setselectfile_outline(true);
         alert("Only PDF files are allowed.");
