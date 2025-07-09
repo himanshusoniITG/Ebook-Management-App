@@ -2,15 +2,21 @@
   "version": 2,
   "builds": [
     {
-      "src": "shopify.server.js",
+      "src": "api/index.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "public/**/*",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "build/index.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
-    {
-      "src": "/.*",
-      "dest": "/shopify.server.js"
-    }
+    { "src": "/build/(.*)", "dest": "/build/$1" },
+    { "src": "/favicon.ico", "dest": "/public/favicon.ico" },
+    { "src": "/.*", "dest": "/build/index.js" }
   ]
 }
- 

@@ -20,4 +20,6 @@ module.exports = {
   serverModuleFormat: "cjs",
   dev: { port: process.env.HMR_SERVER_PORT || 8002 },
   future: {},
+  serverBuildTarget: "vercel",
+  server: "./shopify.server.js"
 };
