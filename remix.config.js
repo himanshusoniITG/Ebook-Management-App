@@ -16,9 +16,7 @@ module.exports = {
   },
   ignoredRouteFiles: ["**/.*"],
   appDirectory: "app",
-  serverModuleFormat: "cjs",
-  serverDependenciesToBundle: ["@remix-run/vercel"],
-  dev: { port: process.env.HMR_SERVER_PORT || 8002 },
-  serverBuildTarget: "vercel",
-  server: "./server.js"
+  serverModuleFormat: "esm",  // default, ya specify agar needed ho
+  serverDependenciesToBundle: [],
+  dev: { port: process.env.HMR_SERVER_PORT || 8002 }
 };

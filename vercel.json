@@ -1,18 +1,9 @@
 {
-  "version": 2,
+  "version": 3,
   "builds": [
     {
-      "src": "server.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "public/**/*",
-      "use": "@vercel/static"
+      "src": "package.json",
+      "use": "@vercel/remix"
     }
-  ],
-  "routes": [
-    { "src": "/favicon.ico", "dest": "/public/favicon.ico" },
-    { "src": "/build/(.*)", "dest": "/public/build/$1" },
-    { "src": "/.*", "dest": "/server.js" }
   ]
 }
