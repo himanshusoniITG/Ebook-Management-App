@@ -2,8 +2,14 @@
   "version": 3,
   "builds": [
     {
-      "src": "package.json",
+      "src": "remix.config.js",
       "use": "@vercel/remix"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/"
     }
   ]
 }
