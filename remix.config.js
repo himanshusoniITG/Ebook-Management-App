@@ -9,7 +9,6 @@ if (
   process.env.SHOPIFY_APP_URL = process.env.HOST;
   delete process.env.HOST;
 }
-
 /** @type {import('@remix-run/dev').AppConfig} */
 module.exports = {
   future: {
@@ -18,8 +17,8 @@ module.exports = {
   ignoredRouteFiles: ["**/.*"],
   appDirectory: "app",
   serverModuleFormat: "cjs",
+  serverDependenciesToBundle: ["@remix-run/vercel"],
   dev: { port: process.env.HMR_SERVER_PORT || 8002 },
-  future: {},
   serverBuildTarget: "vercel",
-  server: "./shopify.server.js"
+  server: "./server.js"
 };

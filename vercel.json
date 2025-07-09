@@ -13,6 +13,6 @@
   "routes": [
     { "src": "/favicon.ico", "dest": "/public/favicon.ico" },
     { "src": "/build/(.*)", "dest": "/public/build/$1" },
-    { "src": "/.*", "dest": "/shopify.server.js" }
+    { "src": "/.*", "dest": "/server.js" }
   ]
 }
