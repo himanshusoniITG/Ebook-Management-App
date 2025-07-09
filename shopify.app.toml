@@ -3,7 +3,7 @@
 client_id = "f9519240f1981e13244f284c6b1737ef"
 name = "Ebook Management"
 handle = "ebook-management"
-application_url = "https://config-january-there-jewel.trycloudflare.com"
+application_url = "https://ebook-management-app.onrender.com"
 embedded = true
 
 [build]

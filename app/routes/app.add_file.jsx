@@ -6,7 +6,6 @@ import ProductSelector from '../routes/app.ProductSelector';
 import { useAppBridge } from '@shopify/app-bridge-react';
 import { useFileContext } from '../routes/FileContext'
 
-
 export default function SelectFiles() {
   const { saveItem } = useFileContext();
   const [file, setFile] = useState(null); 

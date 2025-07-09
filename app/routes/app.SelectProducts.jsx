@@ -43,8 +43,10 @@ export default function SelectProducts({ product, setSelectProducts, setSelectPr
                         <div style={{ display: 'flex', maxWidth: '100px', width: '100%', justifyContent: 'flex-end', gap: '25px' }}>
                             <Button icon={XSmallIcon} onClick={removeProduct} id={product.id} variant="plain"></Button>
                         </div>
+                        
                     </div>
                 </Card>
+
             </BlockStack>
         </>
     )
