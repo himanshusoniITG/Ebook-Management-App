@@ -47,7 +47,7 @@ export default defineConfig({
     hmr: hmrConfig,
     fs: {
       // See https://vitejs.dev/config/server-options.html#server-fs-allow for more information
-      allow: ["app", "node_modules"],
+      allow: ["app", "node_modules", "node_modules/@shopify/polaris"],
     },
   },
   plugins: [
@@ -68,6 +68,10 @@ export default defineConfig({
     assetsInlineLimit: 0,
   },
   optimizeDeps: {
-    include: ["@shopify/app-bridge-react", "@shopify/polaris"],
-  },
+  include: [
+    "@shopify/app-bridge-react",
+    "@shopify/polaris",
+    "@shopify/polaris/build/esm/styles.css"
+  ]
+},
 });
