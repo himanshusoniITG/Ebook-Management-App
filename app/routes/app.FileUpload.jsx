@@ -13,7 +13,6 @@ export default function FileUpload({ onFileChange }) {
         setselectfile_outline(false);
         onFileChange(selectedFile);
       } else {
-       
         setFile(null);
         setselectfile_outline(true);
         alert("Only PDF files are allowed.");
