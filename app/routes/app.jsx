@@ -10,7 +10,7 @@ import { authenticate } from "../shopify.server";
 export const links = () => [
   {
     rel: "stylesheet",
-    href: "https://cdn.jsdelivr.net/npm/@shopify/polaris@latest/build/esm/styles.css",
+    href: "/polaris/styles.css",
   },
 ];
 
