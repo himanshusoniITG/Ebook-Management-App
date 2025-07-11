@@ -1,7 +1,7 @@
 import { redirect } from "@remix-run/node";
 import { Form, useLoaderData } from "@remix-run/react";
 import { login } from "../../shopify.server";
-import "./styles.module.css"
+import "./styles.css";
 
 export const loader = async ({ request }) => {
   const url = new URL(request.url);
@@ -17,25 +17,25 @@ export default function App() {
   const { showForm } = useLoaderData();
 
   return (
-    <div className={styles.index}>
-      <div className={styles.content}>
-        <h1 className={styles.heading}>A short heading about [your app]</h1>
-        <p className={styles.text}>
+    <div className="index">
+      <div className="content">
+        <h1 className="heading">A short heading about [your app]</h1>
+        <p className="text">
           A tagline about [your app] that describes your value proposition.
         </p>
         {showForm && (
-          <Form className={styles.form} method="post" action="/auth/login">
-            <label className={styles.label}>
+          <Form className="form" method="post" action="/auth/login">
+            <label className="label">
               <span>Shop domain</span>
-              <input className={styles.input} type="text" name="shop" />
+              <input className="input" type="text" name="shop" />
               <span>e.g: my-shop-domain.myshopify.com</span>
             </label>
-            <button className={styles.button} type="submit">
+            <button className="button" type="submit">
               Log in
             </button>
           </Form>
         )}
-        <ul className={styles.list}>
+        <ul className="list">
           <li>
             <strong>Product feature</strong>. Some detail about your feature and
             its benefit to your customer.
