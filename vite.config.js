@@ -72,6 +72,7 @@ export default defineConfig({
     "@shopify/app-bridge-react",
     "@shopify/polaris",
     "@shopify/polaris/build/esm/styles.css"
-  ]
+  ],
+  extensions: [".ts", ".tsx", ".css"],
 },
 }); 

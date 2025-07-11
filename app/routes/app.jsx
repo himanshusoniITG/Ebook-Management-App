@@ -31,7 +31,7 @@ export default function App() {
           Home
         </Link>
         <Link to="/app/add_file">Add product</Link>
-      </NavMenu>
+      </NavMenu>  
       <Outlet />
     </AppProvider>
   );
