@@ -1,7 +1,9 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
 client_id = "f9519240f1981e13244f284c6b1737ef"
 name = "Ebook Management"
 handle = "ebook-management"
-application_url = "https://ebook-management-app.vercel.app"
+application_url = "https://ivory-burn-del-click.trycloudflare.com"
 embedded = true
 
 [build]
@@ -20,13 +22,14 @@ api_version = "2025-04"
   uri = "/webhooks/app/scopes_update"
 
 [access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
 scopes = "write_products,read_orders,customer_read_customers,customer_write_customers,unauthenticated_read_customers,read_customers"
 
 [auth]
 redirect_urls = [
-  "https://ebook-management-app.vercel.app/auth/callback",
-  "https://ebook-management-app.vercel.app/auth/shopify/callback",
-  "https://ebook-management-app.vercel.app/api/auth/callback"
+  "https://ivory-burn-del-click.trycloudflare.com/auth/callback",
+  "https://ivory-burn-del-click.trycloudflare.com/auth/shopify/callback",
+  "https://ivory-burn-del-click.trycloudflare.com/api/auth/callback"
 ]
 
 [pos]
