@@ -15,9 +15,6 @@ export default function FileUpload({ onFileChange }) {
 
   const handleDropZoneDrop = useCallback((dropFiles, acceptedFiles, rejectedFiles) => {
     console.log("📥 DropZone Triggered");
-    console.log("✅ Accepted Files:", acceptedFiles);
-    console.log("❌ Rejected Files:", rejectedFiles);
-
     const selectedFile = acceptedFiles[0];
 
     if (selectedFile && selectedFile.type === 'application/pdf') {
@@ -53,15 +50,11 @@ export default function FileUpload({ onFileChange }) {
         label="Select PDF File"
         onDrop={handleDropZoneDrop}
       >
-        <div style={{ minHeight: '100px', padding: '1rem' }}>
-          {uploadedFile ? (
-            <Card>{uploadedFile}</Card>
-          ) : (
-            <Text variant="bodyMd" as="p" alignment="center">
-              Drag and drop a PDF file here or click to upload.
-            </Text>
-          )}
-        </div>
+        {uploadedFile ? (
+          <Card>{uploadedFile}</Card>
+        ) : (
+          <DropZone.FileUpload /> // ✅ Do NOT remove this line
+        )}
       </DropZone>
     </Card>
   );
