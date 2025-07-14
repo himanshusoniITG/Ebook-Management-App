@@ -46,7 +46,7 @@ export default function FileUpload({ onFileChange }) {
         accept="application/pdf"
         allowMultiple={false}
         outline={selectfile_outline}
-        label="Select PDF File"
+        label="Select PDF File Filled"
         onDrop={handleDropZoneDrop}
       >
        <Text>https://ahcapublications.org/</Text> {uploadedFile ? <Card>{uploadedFile}</Card> : <DropZone.FileUpload />}
