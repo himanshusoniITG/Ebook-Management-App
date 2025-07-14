@@ -111,7 +111,7 @@ export default function IndexPage() {
         margin:'20px 0',
       }}
     >
-      + Add File
+      + Add File Filed
     </button>
   </InlineStack>
           <IndexFilters
