@@ -20,6 +20,7 @@ export default function FileUpload({ onFileChange }) {
       }
     },
     [onFileChange]
+
   );
 
   const uploadedFile = file && (
@@ -40,6 +41,7 @@ export default function FileUpload({ onFileChange }) {
 
   return (
     <Card title="Select file details" sectioned>
+      {uploadedFile }{file}
       <DropZone
         accept="application/pdf"
         allowMultiple={false}
