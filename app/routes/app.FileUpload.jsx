@@ -41,7 +41,7 @@ export default function FileUpload({ onFileChange }) {
 
   return (
     <Card title="Select file details" sectioned>
-      {uploadedFile }{file}
+      {uploadedFile }---{file}
       <DropZone
         accept="application/pdf"
         allowMultiple={false}
@@ -49,7 +49,7 @@ export default function FileUpload({ onFileChange }) {
         label="Select PDF File"
         onDrop={handleDropZoneDrop}
       >
-       {uploadedFile ? <Card>{uploadedFile}</Card> : <DropZone.FileUpload />}
+       {uploadedFile }---{file} {uploadedFile ? <Card>{uploadedFile}</Card> : <DropZone.FileUpload />}
       </DropZone>
     </Card>
   );
