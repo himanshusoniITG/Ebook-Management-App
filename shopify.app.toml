@@ -27,9 +27,9 @@ scopes = "write_products,read_orders,customer_read_customers,customer_write_cust
 
 [auth]
 redirect_urls = [
-  "https://ebook-management-app.vercel.app/auth/callback",
-  "https://ebook-management-app.vercel.app/auth/shopify/callback",
-  "https://ebook-management-app.vercel.app/api/auth/callback"
+  "https://ivory-burn-del-click.trycloudflare.com/auth/callback",
+  "https://ivory-burn-del-click.trycloudflare.com/auth/shopify/callback",
+  "https://ivory-burn-del-click.trycloudflare.com/api/auth/callback"
 ]
 
 [pos]
