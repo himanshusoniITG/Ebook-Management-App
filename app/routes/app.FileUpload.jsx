@@ -1,34 +1,30 @@
-import { DropZone, Card, InlineStack, Thumbnail, BlockStack, Text } from '@shopify/polaris';
+import {
+  DropZone,
+  Card,
+  Text,
+  Thumbnail,
+  InlineStack,
+  BlockStack
+} from '@shopify/polaris';
 import { NoteIcon } from '@shopify/polaris-icons';
 import { useState, useCallback } from 'react';
-export default function FileUpload({ onFileChange }) {
-  const [file, setFile] = useState(null);
-  const [selectfile_outline, setselectfile_outline] = useState(true);
-  const handleDropZoneDrop = useCallback(
-    (_, acceptedFiles) => {
-      const selectedFile = acceptedFiles[0];
 
-  if (selectedFile && selectedFile.type === 'application/pdf') {
-        setFile(selectedFile);
-        setselectfile_outline(false);
-        onFileChange(selectedFile);
-      } else {
-        setFile(null);
-        setselectfile_outline(true);
-        alert("Only PDF files are allowed.");
-      }
+export default function FileUpload() {
+  const [file, setFile] = useState(null);
+
+  const handleDropZoneDrop = useCallback(
+    (_dropFiles, acceptedFiles, _rejectedFiles) => {
+      console.log('📥 File dropped:', acceptedFiles);
+      const uploadedFile = acceptedFiles[0];
+      setFile(uploadedFile);
     },
-    [onFileChange]
+    [],
   );
 
   const uploadedFile = file && (
-    <InlineStack alignment="center" gap="200" wrap="true">
-      <Thumbnail
-        size="small"
-        alt={file.name}
-        source={NoteIcon}
-      />
-      <BlockStack gap="100">
+    <InlineStack alignment="center" gap="200">
+      <Thumbnail source={NoteIcon} alt={file.name} size="small" />
+      <BlockStack>
         <Text>{file.name}</Text>
         <Text variant="bodySm" as="p">
           {(file.size / 1024).toFixed(2)} KB
@@ -38,15 +34,23 @@ export default function FileUpload({ onFileChange }) {
   );
 
   return (
-    <Card title="Select file details" sectioned>
+    <Card title="Upload PDF File" sectioned>
       <DropZone
-        accept="application/pdf"
-        allowMultiple={false}
-        outline={selectfile_outline}
-        label="Select PDF File"
         onDrop={handleDropZoneDrop}
+        accept="application/pdf"
+        type="file"
+        allowMultiple={false}
       >
-        {uploadedFile ? <Card>{uploadedFile}</Card> : <DropZone.FileUpload />}
+        {uploadedFile ? (
+          <div style={{ padding: '1rem' }}>
+            {uploadedFile}
+          </div>
+        ) : (
+          <DropZone.FileUpload
+            actionTitle="Click or drag a PDF here"
+            actionHint="Only .pdf files are supported"
+          />
+        )}
       </DropZone>
     </Card>
   );
