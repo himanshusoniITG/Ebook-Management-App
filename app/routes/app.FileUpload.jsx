@@ -46,7 +46,7 @@ export default function FileUpload({ onFileChange }) {
         label="Select PDF File"
         onDrop={handleDropZoneDrop}
       >
-       {file}--{uploadedFile} {uploadedFile ? <Card>{uploadedFile}</Card> : <DropZone.FileUpload />}
+       {uploadedFile ? <Card>{uploadedFile}</Card> : <DropZone.FileUpload />}
       </DropZone>
     </Card>
   );
