@@ -57,7 +57,6 @@ useEffect(() => {
   return () => observer.disconnect();
 }, []);
 
-
   return (
     <Card title="Select file details" sectioned>
       <DropZone
