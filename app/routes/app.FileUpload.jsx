@@ -37,6 +37,27 @@ export default function FileUpload({ onFileChange }) {
     </InlineStack>
   );
 
+useEffect(() => {
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      mutation.target.classList.forEach((cls) => {
+        if (cls.includes('Polaris-DropZone--measuring')) {
+          mutation.target.classList.remove('Polaris-DropZone--measuring');
+          mutation.target.classList.add('my-custom-dropzone');
+        }
+      });
+    });
+  });
+
+  const dropzone = document.querySelector('.Polaris-DropZone');
+  if (dropzone) {
+    observer.observe(dropzone, { attributes: true, attributeFilter: ['class'] });
+  }
+
+  return () => observer.disconnect();
+}, []);
+
+
   return (
     <Card title="Select file details" sectioned>
       <DropZone
