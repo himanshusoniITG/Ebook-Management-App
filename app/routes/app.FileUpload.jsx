@@ -6,9 +6,9 @@ export default function FileUpload({ onFileChange }) {
   const [selectfile_outline, setselectfile_outline] = useState(true);
   const handleDropZoneDrop = useCallback(
     (_, acceptedFiles) => {
-      console.log("Dropped:", acceptedFiles);
+
       const selectedFile = acceptedFiles[0];
-       console.log("selectedFile:", selectedFile);
+     
   if (selectedFile && selectedFile.type === 'application/pdf') {
         setFile(selectedFile);
         setselectfile_outline(false);
