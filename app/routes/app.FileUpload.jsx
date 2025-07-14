@@ -37,19 +37,16 @@ export default function FileUpload({ onFileChange }) {
     </InlineStack>
   );
 
-  console.log('selectfile_outline',selectfile_outline);
-
-
   return (
     <Card title="Select file details" sectioned>
       <DropZone
         accept="application/pdf"
         allowMultiple={false}
         outline={selectfile_outline}
-        label="Select PDF File Filled"
+        label="Select PDF File"
         onDrop={handleDropZoneDrop}
       >
-       {uploadedFile} {uploadedFile ? <Card>{uploadedFile}</Card> : <DropZone.FileUpload />}
+       {file}--{uploadedFile} {uploadedFile ? <Card>{uploadedFile}</Card> : <DropZone.FileUpload />}
       </DropZone>
     </Card>
   );
