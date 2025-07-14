@@ -31,7 +31,6 @@ export default function SelectFiles() {
      }
   }, [file, products, saveItem]);
    isSaveDisabled = !file || products.length === 0;
-     console.log('saveItemsss',saveItem); 
 
   return (
 

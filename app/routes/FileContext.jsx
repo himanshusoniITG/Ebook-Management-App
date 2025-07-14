@@ -10,9 +10,6 @@ export function FileProvider({ children }) {
     setSavedItems((prev) => [...prev, { file, product, id: Date.now() }]);
   };
 
-  console.log('saveItem',saveItem);
-
-
   return (
     <FileContext.Provider value={{ savedItems, saveItem }}>
       {children}
