@@ -20,6 +20,8 @@ export default function IndexPage() {
   const handleFiltersQueryChange = useCallback((value) => setQueryValue(value), []);
   const handleQueryValueRemove = useCallback(() => setQueryValue(''), []);
 
+  console.log('handleFiltersQueryChange',handleFiltersQueryChange);
+
   const sortOptions = [
     { label: 'File Name', value: 'name asc', directionLabel: 'A-Z' },
     { label: 'File Name', value: 'name desc', directionLabel: 'Z-A' },
