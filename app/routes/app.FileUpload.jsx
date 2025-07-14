@@ -37,6 +37,9 @@ export default function FileUpload({ onFileChange }) {
     </InlineStack>
   );
 
+  console.log('selectfile_outline',selectfile_outline);
+
+
   return (
     <Card title="Select file details" sectioned>
       <DropZone
