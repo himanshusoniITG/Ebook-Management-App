@@ -51,7 +51,6 @@ export default function FileUpload({ onFileChange }) {
   return (
     <Card title="Select file details" sectioned>
       <DropZone
-        type="file"
         accept="application/pdf"
         allowMultiple={false}
         outline={selectfile_outline}
