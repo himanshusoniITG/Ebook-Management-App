@@ -5,18 +5,27 @@ export default function FileUpload({ onFileChange }) {
   const [file, setFile] = useState(null);
   const [selectfile_outline, setselectfile_outline] = useState(true);
   const handleDropZoneDrop = useCallback(
-    (_, acceptedFiles) => {
+    (_, acceptedFiles, rejectedFiles) => {
 
       const selectedFile = acceptedFiles[0];
-     
+      console.log('acceptedFiles:', acceptedFiles);
+      console.log('rejectedFiles:', rejectedFiles);
+
+
   if (selectedFile && selectedFile.type === 'application/pdf') {
         setFile(selectedFile);
         setselectfile_outline(false);
         onFileChange(selectedFile);
+        console.log("selectedFile:", selectedFile);
+        console.log("file state:", file);
+
       } else {
         setFile(null);
         setselectfile_outline(true);
         alert("Only PDF files are allowed.");
+        console.log("selectedFile:", selectedFile);
+        console.log("file state:", file);
+
       }
     },
     [onFileChange]
@@ -42,6 +51,7 @@ export default function FileUpload({ onFileChange }) {
   return (
     <Card title="Select file details" sectioned>
       <DropZone
+        type="file"
         accept="application/pdf"
         allowMultiple={false}
         outline={selectfile_outline}
