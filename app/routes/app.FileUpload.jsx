@@ -49,7 +49,7 @@ export default function FileUpload({ onFileChange }) {
         label="Select PDF File Filled"
         onDrop={handleDropZoneDrop}
       >
-       <Text>https://ahcapublications.org/</Text> {uploadedFile ? <Card>{uploadedFile}</Card> : <DropZone.FileUpload />}
+       {file} {uploadedFile ? <Card>{uploadedFile}</Card> : <DropZone.FileUpload />}
       </DropZone>
     </Card>
   );
